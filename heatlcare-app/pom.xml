@@ -11,7 +11,8 @@
 	<groupId>com.example</groupId>
 	<artifactId>heatlcare-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>heatlcare-app</name>
+    <packaging>pom</packaging>
+    <name>heatlcare-app</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -20,7 +21,13 @@
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
+    <modules>
+        <module>patient-service</module>
+		<module>doctor-service</module>
+		<module>common-proto</module>
+		<module>apppointment-service</module>
+	</modules>
+    <scm>
 		<connection/>
 		<developerConnection/>
 		<tag/>
