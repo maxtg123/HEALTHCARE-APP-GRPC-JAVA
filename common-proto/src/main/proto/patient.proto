@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+
+package com.example.partient;
+
+service PatientService{
+  rpc RegisterPatient (PatientRegistrationRequest) returns (PatientRegistrationResponse);
+  rpc GetPatientDetails (PatientDetailsRequest) returns (PatientDetails);
+}
+
+message PatientRegistrationRequest {
+  string first_name= 1 ;
+  string last_name= 2 ;
+  string email= 3 ;
+  string phone= 4 ;
+  string address= 5 ;
+}
+
+message PatientRegistrationResponse{
+  int64 patient_id = 1 ;
+  string message = 2 ;
+}
+
+message PatientDetailsRequest{
+  int64 patient_id = 1 ;
+}
+
+message PatientDetails{
+  string first_name= 1 ;
+  string last_name= 2 ;
+  string email= 3 ;
+  string phone= 4 ;
+  string address= 5 ;
+}
