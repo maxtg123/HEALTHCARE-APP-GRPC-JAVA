@@ -43,19 +43,19 @@ grpcurl -plaintext -d '{
   "email": "john.thomas@example.com",
   "phone": "123-456-7890",
   "address": "123 Main St"
-}' localhost:9090 com.codewiz.patient.PatientService/RegisterPatient
+}' localhost:9090 com.example.patient.PatientService/RegisterPatient
 ```
 
 ### 🔍 Get Patient Details
 ```bash
 grpcurl -plaintext -d '{
   "patient_id": 1
-}' localhost:9090 com.codewiz.patient.PatientService/GetPatientDetails
+}' localhost:9090 com.examle.patient.PatientService/GetPatientDetails
 ```
 
 ### 📡 Stream Patients (Client Streaming)
 ```bash
-grpcurl -d @ -plaintext localhost:9090 com.codewiz.patient.PatientService/StreamPatients <<EOM
+grpcurl -d @ -plaintext localhost:9090 com.example.patient.PatientService/StreamPatients <<EOM
 {
   "first_name": "John",
   "last_name": "Smith",
@@ -92,19 +92,19 @@ grpcurl -d '{
   "specialty": "Cardiology",
   "centre_name": "Health Centre",
   "location": "New York"
-}' -plaintext localhost:9091 com.codewiz.doctor.DoctorService/RegisterDoctor
+}' -plaintext localhost:9091 com.example.doctor.DoctorService/RegisterDoctor
 ```
 
 ### 🔍 Get Doctor Details
 ```bash
 grpcurl -plaintext -d '{
   "doctor_id": 1
-}' localhost:9091 com.codewiz.doctor.DoctorService/GetDoctorDetails
+}' localhost:9091 com.example.doctor.DoctorService/GetDoctorDetails
 ```
 
 ### 💬 Chat with Doctor (Bidirectional Streaming)
 ```bash
-grpcurl -d @ -plaintext localhost:9091 com.codewiz.doctor.DoctorService/Chat <<EOM
+grpcurl -d @ -plaintext localhost:9091 com.example.doctor.DoctorService/Chat <<EOM
 {
   "message": "Hello, Doctor!",
   "from": "Patient",
@@ -133,7 +133,7 @@ grpcurl -plaintext localhost:9092 list
 ```bash
 grpcurl -plaintext -d '{
   "doctor_id": 1
-}' localhost:9092 com.codewiz.appointment.AppointmentService/GetAppointmentAvailability
+}' localhost:9092 com.example.appointment.AppointmentService/GetAppointmentAvailability
 ```
 
 ### ✅ Book Appointment
@@ -144,7 +144,7 @@ grpcurl -plaintext -d '{
   "appointment_date": "2025-02-15",
   "appointment_time": "10:00",
   "reason": "Routine check-up"
-}' localhost:9092 com.codewiz.appointment.AppointmentService/BookAppointment
+}' localhost:9092 com.example.appointment.AppointmentService/BookAppointment
 ```
 
 ---
